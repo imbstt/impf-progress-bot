@@ -5,7 +5,7 @@ Account [@impf_progress](https://twitter.com/impf_progress) on Twitter
 ## Script Setup
 
 - Edit [twitter.cfg](./twitter.cfg) and put in your Twitter Consumer and Access tokens/keys
-- Make sure [state.cfg](./state.cfg) is writable
+- Make sure [state.cfg](./state.cfg) is writable, this is where the last Tweet and its values are stored so to not Tweet repeated messages
 - Change `DRY_RUN = True` in [bot.py](./bot.py) to `False` when you are done testing
 
 ## Script Setup
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 Running a cronjob with virtualenv:
 
 ```
-0 12 * * * cd /home/you/twitter-impf-progress-bot/ && /home/you/twitter-impf-progress-bot/venv/bin/python /home/you/twitter-impf-progress-bot/bot.py
+0 12 * * * cd /home/you/impf-progress-bot/ && /home/you/impf-progress-bot/venv/bin/python /home/you/impf-progress-bot/bot.py
 ```
 
 ## Data Source
