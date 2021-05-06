@@ -22,7 +22,7 @@ Der tägliche Aktualisierungszeitpunkt des Impfdashboard schwankt etwas, und som
 
 Der Bot wird als Hobbyprojekt betrieben von [@imbstt](https://twitter.com/imbstt) und ist kein Angebot des Bundesministeriums für Gesundheit, des RKI oder anderer staatlicher oder öffentlicher Stellen.
 
-Der Code Open Source und auf Github einsehbar: https://github.com/imbstt/impf-progress-bot
+Der Code Open Source und auf Github einsehbar: [https://github.com/imbstt/impf-progress-bot](https://github.com/imbstt/impf-progress-bot)
 
 ## Mehr Details, Prognosen, Herdenimmunität?
 
