@@ -28,7 +28,7 @@ Der Code Open Source und auf Github einsehbar: [https://github.com/imbstt/impf-p
 
 Ich möchte den Bot simpel halten und die Darstellung nicht verändern. 
 
-Im Folgenden sind einige weitere Bots und Accounts gelistet, die die Impfzahlen ebenfalls bereitstellen, ggf. etwas anders aufbereitet. Einige Accounts versuchen Vorhersagen zu treffen, diese sind meiner Meinung nach mit mit Vorsicht zu genießen. 
+Im Folgenden sind einige weitere Bots und Accounts gelistet, die die Impfzahlen ebenfalls bereitstellen, ggf. etwas anders aufbereitet. Einige Accounts versuchen Vorhersagen zu treffen, diese sind meiner Meinung nach mit Vorsicht zu genießen. 
 
 Diese Accounts werden von anderen Personen betrieben und sind unabhängig entstanden.
 
