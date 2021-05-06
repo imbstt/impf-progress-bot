@@ -4,9 +4,9 @@ Account [@impf_progress](https://twitter.com/impf_progress) on Twitter
 
 ## Script Setup
 
-- Edit [twitter.cfg](twitter.cfg) and put in your Twitter Consumer and Access tokens/keys
-- Make sure [state.cfg](state.cfg) is writable
-- Change `DRY_RUN = True` in [bot.py](bot.py) to `False`
+- Edit [twitter.cfg](./twitter.cfg) and put in your Twitter Consumer and Access tokens/keys
+- Make sure [state.cfg](./state.cfg) is writable
+- Change `DRY_RUN = True` in [bot.py](./bot.py) to `False` when you are done testing
 
 ## Script Setup
 
