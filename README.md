@@ -30,7 +30,7 @@ pip3 install tweepy
 pip install -r requirements.txt
 ```
 
-The script can now run simply be called
+The script can now simply be called like this:
 
 ```
 python bot.py
