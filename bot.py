@@ -81,7 +81,7 @@ def saveState(data):
 def generateMessage(data):
 	bar_erst = generateProgressbar(float(data.get('impf_quote_erst')))
 	bar_voll = generateProgressbar(float(data.get('impf_quote_voll')))
-	msg = '{} Erstimpfung\n{} vollständig geimpft'.format(bar_erst, bar_voll)
+	msg = '{} mind. eine Impfdosis\n{} vollständig Geimpfte'.format(bar_erst, bar_voll)
 	return msg
 
 def runAll():
