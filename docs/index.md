@@ -2,7 +2,7 @@
 
 ## Allgemeine Infos
 
-Der Account Impfstatus Fortschritt [@impf_progress](https://twitter.com/impf_progress) tweetet einmal täglich den Anteil der geimpften deutschen Bevölkerung und stellt diese mit einem Fortschrittsbalken dar. Inspiriert ist die Darstellung durch den Twitter Account [@year_progress](https://twitter.com/year_progress). 
+Der Account Impfstatus Fortschritt [@impf_progress](https://twitter.com/impf_progress) tweetet einmal täglich den Anteil der geimpften deutschen Bevölkerung und stellt diesen mit einem Fortschrittsbalken dar. Inspiriert ist die Darstellung durch den Twitter Account [@year_progress](https://twitter.com/year_progress).
 
 Die Darstellung der grauen Kästchen mag etwas seltsam erscheinen, und bei gewissen Prozentzahlen überlappen und falsch erscheinen. Die gewählte Darstellung ist etwas "grob", es gibt nur 15 Abstufungen. Etwa alle 6-7 % füllt sich ein weiteres Stück Balken (schaut euch @year_progress kurz an oder hier [meine Erklärung mit Screenshots](https://twitter.com/imbstt/status/1369054005461147658)).
 
@@ -22,7 +22,7 @@ Der tägliche Aktualisierungszeitpunkt des Impfdashboard schwankt etwas, und som
 
 Der Bot wird als Hobbyprojekt betrieben von [@imbstt](https://twitter.com/imbstt) und ist kein Angebot des Bundesministeriums für Gesundheit, des RKI oder anderer staatlicher oder öffentlicher Stellen.
 
-Der Code Open Source und auf Github einsehbar: [https://github.com/imbstt/impf-progress-bot](https://github.com/imbstt/impf-progress-bot)
+Der Code ist Open Source und auf Github einsehbar: [https://github.com/imbstt/impf-progress-bot](https://github.com/imbstt/impf-progress-bot)
 
 ## Mehr Details, Prognosen, Herdenimmunität?
 
