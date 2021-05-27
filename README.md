@@ -23,6 +23,9 @@ venv\Scripts\activate.bat
 # Activate venv: Linux
 venv\bin\activate
 
+# Activate venv: MacOS
+source venv/bin/activate
+
 # Install tweepy directly
 pip3 install tweepy
 
