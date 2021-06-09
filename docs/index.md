@@ -36,7 +36,6 @@ Diese Accounts werden von anderen Personen betrieben und sind unabhängig entsta
 
 * [@impfstatus](https://twitter.com/impfstatus) 
 * [@ImpfStatusGER](https://twitter.com/ImpfStatusGER) 
-* [@BotImpf](https://twitter.com/BotImpf)
 * [@GermanyProgress](https://twitter.com/GermanyProgress)
 * [@impftracker](https://twitter.com/impftracker)
 * [@CoronaBot_DEU](https://twitter.com/CoronaBot_DEU)
