@@ -20,10 +20,7 @@ py -3 venv venv
 # Activate venv: Windows
 venv\Scripts\activate.bat 
 
-# Activate venv: Linux
-venv\bin\activate
-
-# Activate venv: MacOS
+# Activate venv: Linux / MacOS
 source venv/bin/activate
 
 # Install tweepy directly
