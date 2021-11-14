@@ -4,7 +4,7 @@ This is the code that runs the account [@impf_progress](https://twitter.com/impf
 
 >▓▓▓▓▓▓▓▓▓▓░░░░░ 70,0% mind. eine Impfdosis  
 >▓▓▓▓▓▓▓▓▓▓░░░░░ 67,5% vollständig Geimpfte  
->▓░░░░░░░░░░░░░░ 4,6% Drittgeimpfte
+>▓░░░░░░░░░░░░░░ 4,6% Booster Geimpfte
 
 ## Script Setup
 
