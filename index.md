@@ -41,22 +41,23 @@ Diese Accounts werden von anderen Personen betrieben und sind unabhängig entsta
 
 ### Deutschland
 
-* [@impfstatus](https://twitter.com/impfstatus) 
+* [@CoronaBot_DEU](https://twitter.com/CoronaBot_DEU)
+* [@impfupdate](https://twitter.com/impfupdate) (Englisch)
 * [@ImpfStatusGER](https://twitter.com/ImpfStatusGER) 
 * [@GermanyProgress](https://twitter.com/GermanyProgress)
-* [@impftracker](https://twitter.com/impftracker)
-* [@CoronaBot_DEU](https://twitter.com/CoronaBot_DEU)
-* [@VaccinesGermany](https://twitter.com/VaccinesGermany/) (Englisch)
 * [@impffortschritt](https://twitter.com/impffortschritt)
 
 ### Belgien
 
 * [@VacBotBE](https://twitter.com/VacBotBE)
 
+### Italien
+
+* [@BVaccini](https://twitter.com/BVaccini)
+
 ### Österreich
 
 * [@jaukerlbot](https://twitter.com/jaukerlbot) 
-* [@impfbot](https://twitter.com/impfbot)
 
 ### Schweiz
 
