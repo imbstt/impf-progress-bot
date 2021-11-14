@@ -1,106 +1,152 @@
-import csv
-import urllib.request
-import tweepy
-from datetime import datetime
 import configparser
+import csv
+import sys
+import tweepy
+import urllib.request
+from datetime import datetime
 
-DRY_RUN = True
-
+"""
+Set up config values and constants
+"""
 twitter_config = configparser.ConfigParser()
-twitter_config.read('twitter.cfg')
-CONSUMER_KEY    = twitter_config.get('TWITTER', 'CONSUMER_KEY')
-CONSUMER_SECRET = twitter_config.get('TWITTER', 'CONSUMER_SECRET')
-ACCESS_KEY      = twitter_config.get('TWITTER', 'ACCESS_KEY')
-ACCESS_SECRET   = twitter_config.get('TWITTER', 'ACCESS_SECRET')
+twitter_config.read("twitter.cfg")
+DRY_RUN         = twitter_config.getboolean("TWITTER", "DRY_RUN")
+CONSUMER_KEY    = twitter_config.get("TWITTER", "CONSUMER_KEY")
+CONSUMER_SECRET = twitter_config.get("TWITTER", "CONSUMER_SECRET")
+ACCESS_KEY      = twitter_config.get("TWITTER", "ACCESS_KEY")
+ACCESS_SECRET   = twitter_config.get("TWITTER", "ACCESS_SECRET")
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
-TSV_URL = "https://impfdashboard.de/static/data/germany_vaccinations_timeseries_v2.tsv"
+CSV_URL = "https://raw.githubusercontent.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/master/Aktuell_Deutschland_Impfquoten_COVID-19.csv"
+CSV_COLUMN_ERST = "Impfquote_gesamt_min1"
+CSV_COLUMN_VOLL = "Impfquote_gesamt_voll"
+CSV_COLUMN_BOOST = "Impfquote_gesamt_boost"
 
-CONFIG_FILENAME = 'state.cfg'
+CONFIG_FILENAME = "state.cfg"
 
 config = configparser.ConfigParser()
 config.read(CONFIG_FILENAME)
 
-def generateProgressbar(percentage):
+def generate_progressbar(percentage):
+	"""
+	Generates the ASCII-art style progress bar, and appends the percentage number in German locale number format
+	"""
 	num_chars = 15
-	num_filled = round(percentage*num_chars)
+	num_filled = round((percentage/100)*num_chars)
 	num_empty = num_chars-num_filled
-	display_percentage = str(round(percentage*100, 1)).replace('.', ',')
-	msg = '{}{} {}%'.format('▓'*num_filled, '░'*num_empty, display_percentage)
+	display_percentage = str(percentage).replace(".", ",")
+	msg = "{}{} {}%".format("▓"*num_filled, "░"*num_empty, display_percentage)
 	return msg
 
-def getCurrentdata(url):
-	tsvstream = urllib.request.urlopen(url)
-	tsv_file_lines = tsvstream.read().decode('utf-8').splitlines()
-	tsv_data_lines = csv.DictReader(tsv_file_lines, delimiter='\t')
-	# skip to last line
-	for line_dict in tsv_data_lines:
-		pass
-	return line_dict
+def get_current_data(url):
+	"""
+	Downloads the CSV from the data source and extracts data of interest: Vaccination progress for the whole of Germany
+	"""
+	csvstream = urllib.request.urlopen(url)
+	csv_file_lines = csvstream.read().decode("utf-8").splitlines()
+	csv_data_lines = csv.DictReader(csv_file_lines, delimiter=',')
+	for line_dict in csv_data_lines:
+		if line_dict.get("Bundesland") == "Deutschland":
+			return line_dict
+	return None
 
-def sendTweet(the_tweet):
-	twitter_API = tweepy.API(auth)
-	print('tweeting with handle @{}'.format(twitter_API.me().screen_name))
+def send_tweet(the_tweet):
+	"""
+	Sends tweet using the tweepy library
+	"""
 	if DRY_RUN:
-		print("DRY RUN not actually sending tweet!")
+		print("[DRY RUN] Not actually sending tweet")
 		return
+
+	twitter_API = tweepy.API(auth)
+	print("Tweeting with handle @{}".format(twitter_API.me().screen_name))
 	twitter_API.update_status(the_tweet)
 
-def checkIfShouldTweet(data):
-	last_date = datetime.strptime(config.get('LAST_TWEET', 'date'), '%Y-%m-%d')
-	curr_date = datetime.strptime(data.get('date'), '%Y-%m-%d')
-	print("date: {} / {}".format(config.get('LAST_TWEET', 'date'), data.get('date')))
+def check_if_should_tweet(data):
+	"""
+	Performs several tests to check if a tweet should be sent or not:
+	- Current data's date must be newer than the one saved in the state configuration
+	- Any of the percentage values must have changed and be higher as well
+	"""
+	print("Checking old / new values")
+	last_date = datetime.strptime(config.get("LAST_TWEET", "date"), "%Y-%m-%d")
+	curr_date = datetime.strptime(data.get("Datum"), "%Y-%m-%d")
+	print("date: {} / {}".format(config.get("LAST_TWEET", "date"), data.get("Datum")))
 
 	if last_date < curr_date:
-		impf_quote_erst_old = float(config.get('LAST_TWEET', 'impf_quote_erst'))
-		impf_quote_voll_old = float(config.get('LAST_TWEET', 'impf_quote_voll'))
-		impf_quote_erst_new = float(data.get('impf_quote_erst'))
-		impf_quote_voll_new = float(data.get('impf_quote_voll'))
-		
-		print("erst: {} / {}".format(round(impf_quote_erst_old*100, 1), round(impf_quote_erst_new*100, 1)))
-		print("voll: {} / {}".format(round(impf_quote_voll_old*100, 1), round(impf_quote_voll_new*100, 1)))
-		
-		if round(impf_quote_erst_old*100, 1) < round(impf_quote_erst_new*100, 1):
+		impf_quote_erst_old = float(config.get("LAST_TWEET", "impf_quote_erst"))
+		impf_quote_voll_old = float(config.get("LAST_TWEET", "impf_quote_voll"))
+		impf_quote_boost_old = float(config.get("LAST_TWEET", "impf_quote_boost"))
+
+		impf_quote_erst_new = float(data.get(CSV_COLUMN_ERST))
+		impf_quote_voll_new = float(data.get(CSV_COLUMN_VOLL))
+		impf_quote_boost_new = float(data.get(CSV_COLUMN_BOOST))
+
+		print("erst: {} / {}".format(impf_quote_erst_old, impf_quote_erst_new))
+		print("voll: {} / {}".format(impf_quote_voll_old, impf_quote_voll_new))
+		print("boost: {} / {}".format(impf_quote_boost_old, impf_quote_boost_new))
+
+		if impf_quote_erst_old < impf_quote_erst_new:
 			return True
-		if round(impf_quote_voll_old*100, 1) < round(impf_quote_voll_new*100, 1):
+		if impf_quote_voll_old < impf_quote_voll_new:
 			return True
+		if impf_quote_boost_old < impf_quote_boost_new:
+			return True
+		print("Values have not changed: Do not tweet")
 		return False
 	else:
-		print("date is same or older: do not tweet")
+		print("Date is same or older: Do not tweet")
 		return False
 
-def saveState(data):
-	config.set('LAST_TWEET', 'date', data.get('date'))
-	config.set('LAST_TWEET', 'impf_quote_erst', data.get('impf_quote_erst'))
-	config.set('LAST_TWEET', 'impf_quote_voll', data.get('impf_quote_voll'))
-	with open(CONFIG_FILENAME, 'w') as configfile:
-		config.write(configfile)
-		print("saved cfg")
+def save_state(data):
+	"""
+	Saves the date and percentages from the current CSV data to a state configuration file
+	"""
+	config.set("LAST_TWEET", "date", data.get("Datum"))
+	config.set("LAST_TWEET", "impf_quote_erst", data.get(CSV_COLUMN_ERST))
+	config.set("LAST_TWEET", "impf_quote_voll", data.get(CSV_COLUMN_VOLL))
+	config.set("LAST_TWEET", "impf_quote_boost", data.get(CSV_COLUMN_BOOST))
 
-def generateMessage(data):
-	bar_erst = generateProgressbar(float(data.get('impf_quote_erst')))
-	bar_voll = generateProgressbar(float(data.get('impf_quote_voll')))
-	msg = '{} mind. eine Impfdosis\n{} vollständig Geimpfte'.format(bar_erst, bar_voll)
+	if DRY_RUN:
+		print("")
+		print("[DRY RUN] Not updating the state configuration")
+		print("")
+		config.write(sys.stdout)
+		return
+
+	with open(CONFIG_FILENAME, "w") as configfile:
+		config.write(configfile)
+		print("Saved state configuration")
+
+def generate_message(data):
+	"""
+	Concatenates the three progress bars into the final tweet message text
+	"""
+	bar_erst = generate_progressbar(float(data.get(CSV_COLUMN_ERST)))
+	bar_voll = generate_progressbar(float(data.get(CSV_COLUMN_VOLL)))
+	bar_boost = generate_progressbar(float(data.get(CSV_COLUMN_BOOST)))
+	msg = "{} mind. eine Impfdosis\n{} vollständig Geimpfte\n{} Booster Geimpfte".format(bar_erst, bar_voll, bar_boost)
 	return msg
 
-def runAll():
-	data = getCurrentdata(TSV_URL)
-	should_send = checkIfShouldTweet(data)
-	print("send tweet?", should_send)
+def run_all():
+	data = get_current_data(CSV_URL)
+	if not data:
+		print("No matching data found in the CSV")
+		raise
+	should_send = check_if_should_tweet(data)
+	print("")
+	print("Send tweet?", should_send)
 	if should_send:
-		# need to tweet
-		print('send tweet:')
-		print('')
-		progress_msg = generateMessage(data)
+		print("Sending tweet:")
+		print("")
+		progress_msg = generate_message(data)
 		print(progress_msg)
-		print('')
-		sendTweet(progress_msg)
-	else:
-		print('do not tweet')
-	saveState(data)
+		print("")
+		send_tweet(progress_msg)
+	save_state(data)
 
 try:
-	runAll()
+	run_all()
 except:
 	raise
