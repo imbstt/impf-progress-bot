@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Impfstatus Fortschritt Twitter Bot
 ---
 ## Allgemeine Infos
