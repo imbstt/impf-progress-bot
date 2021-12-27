@@ -1,14 +1,15 @@
-# Impfstatus Fortschritt Twitter Bot
-
+---
+title: Impfstatus Fortschritt Twitter Bot
+---
 ## Allgemeine Infos
 
-Der Account Impfstatus Fortschritt [@impf_progress](https://twitter.com/impf_progress) tweetet einmal täglich den Anteil der geimpften deutschen Bevölkerung und stellt diesen mit einem Fortschrittsbalken dar. Inspiriert ist die Darstellung durch den Twitter Account [@year_progress](https://twitter.com/year_progress).
+Der Account Impfstatus Fortschritt [@impf_progress](https://twitter.com/impf_progress) tweetet einmal täglich den Anteil der geimpften deutschen Bevölkerung und stellt diesen mit einem Fortschrittsbalken dar. 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/83777889/144042044-b6627a03-f3a5-4bad-9037-5d5f206d30bf.png" alt="Screenshot eines Tweets von impf_progress vom 30. November 2021" />
 </p>
 
-Die Darstellung der grauen Kästchen mag etwas seltsam erscheinen, und bei gewissen Prozentzahlen überlappen und falsch erscheinen. Die gewählte Darstellung ist etwas "grob", es gibt nur 15 Abstufungen. Etwa alle 6-7 % füllt sich ein weiteres Stück Balken.
+Inspiriert ist die Darstellung durch den Twitter Account [@year_progress](https://twitter.com/year_progress). Die Darstellung der grauen Kästchen mag etwas seltsam erscheinen, und bei gewissen Prozentzahlen überlappen und falsch erscheinen. Die gewählte Darstellung ist etwas "grob", es gibt nur 15 Abstufungen. Etwa alle 6-7 % füllt sich ein weiteres Stück Balken.
 
 ## Datenquelle
 
@@ -41,6 +42,8 @@ Der Code ist Open Source und auf Github einsehbar: [https://github.com/imbstt/im
 Ich möchte den Bot simpel halten und die Darstellung nicht verändern oder mit Prognosen erweitern. 
 
 Zum Thema Herdenimmunität hat das Bundesministerium für Gesundheit auf der Webseite [Gemeinsam gegen Corona](https://www.zusammengegencorona.de/impfen/logistik-und-recht/impfquote/#id-62eceedb-5921-54a8-94dc-c1e162c8ff46) Informationen bereitgestellt.
+
+## Weitere Twitter Bots
 
 Im Folgenden sind einige weitere Bots und Accounts gelistet, die die Impfzahlen ebenfalls bereitstellen, ggf. etwas anders aufbereitet. Einige Accounts versuchen Vorhersagen zu treffen, diese sind meiner Meinung nach mit Vorsicht zu genießen. 
 

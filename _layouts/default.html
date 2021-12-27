@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" href="{{ "style.css?v=" | append: site.github.build_revision | relative_url }}">
+	<!-- tags copied from gh pages SEO -->
+	<meta property="og:title" content="Impfstatus Fortschritt Twitter Bot" />
+	<meta property="og:locale" content="de_DE" />
+	<meta name="description" content="The script that runs the impf_progress Twitter account, tweeting German vaccination updates" />
+	<meta property="og:description" content="The script that runs the impf_progress Twitter account, tweeting German vaccination updates" />
+	<link rel="canonical" href="https://imbstt.github.io/impf-progress-bot/" />
+	<meta property="og:url" content="https://imbstt.github.io/impf-progress-bot/" />
+	<meta property="og:site_name" content="impf-progress-bot" />
+	<meta name="twitter:card" content="summary" />
+	<meta property="twitter:title" content="Impfstatus Fortschritt Twitter Bot" />
+	<script type="application/ld+json">
+	{"description":"The script that runs the impf_progress Twitter account, tweeting German vaccination updates","url":"https://imbstt.github.io/impf-progress-bot/","@type":"WebSite","headline":"Impfstatus Fortschritt Twitter Bot","name":"impf-progress-bot","@context":"https://schema.org"}</script>
+</head>
+<body>
+	<div class="header">
+		<h1>{{ page.title }}</h1>
+		<nav><a href="https://twitter.com/impf_progress">Twitter</a> - <a href="https://github.com/imbstt/impf-progress-bot">Github</a></nav>
+	</div>
+	<div class="content">
+		<div class="content-md">
+{{ content }}
+		</div>
+	</div>
+	<div class="footer">
+		<p><i>Fehler in dieser Dokumentation könnt ihr ebenfalls <a href="https://github.com/imbstt/impf-progress-bot/tree/ghpages">auf Github</a> an mich melden.</i></p>
+	</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+</body>
+</html>
