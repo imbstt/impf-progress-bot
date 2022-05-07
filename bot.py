@@ -20,8 +20,9 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
 CSV_URL = "https://raw.githubusercontent.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/master/Aktuell_Deutschland_Impfquoten_COVID-19.csv"
 CSV_COLUMN_ERST = "Impfquote_gesamt_min1"
-CSV_COLUMN_VOLL = "Impfquote_gesamt_voll"
-CSV_COLUMN_BOOST = "Impfquote_gesamt_boost"
+CSV_COLUMN_VOLL = "Impfquote_gesamt_gi"
+CSV_COLUMN_BOOST = "Impfquote_gesamt_boost1"
+CSV_COLUMN_BOOST2 = "Impfquote_gesamt_boost2"
 
 CONFIG_FILENAME = "state.cfg"
 
@@ -78,20 +79,25 @@ def check_if_should_tweet(data):
 		impf_quote_erst_old = float(config.get("LAST_TWEET", "impf_quote_erst"))
 		impf_quote_voll_old = float(config.get("LAST_TWEET", "impf_quote_voll"))
 		impf_quote_boost_old = float(config.get("LAST_TWEET", "impf_quote_boost"))
+		impf_quote_boost2_old = float(config.get("LAST_TWEET", "impf_quote_boost2"))
 
 		impf_quote_erst_new = float(data.get(CSV_COLUMN_ERST))
 		impf_quote_voll_new = float(data.get(CSV_COLUMN_VOLL))
 		impf_quote_boost_new = float(data.get(CSV_COLUMN_BOOST))
+		impf_quote_boost2_new = float(data.get(CSV_COLUMN_BOOST2))
 
 		print("erst: {} / {}".format(impf_quote_erst_old, impf_quote_erst_new))
 		print("voll: {} / {}".format(impf_quote_voll_old, impf_quote_voll_new))
 		print("boost: {} / {}".format(impf_quote_boost_old, impf_quote_boost_new))
+		print("boost2: {} / {}".format(impf_quote_boost2_old, impf_quote_boost2_new))
 
 		if impf_quote_erst_old < impf_quote_erst_new:
 			return True
 		if impf_quote_voll_old < impf_quote_voll_new:
 			return True
 		if impf_quote_boost_old < impf_quote_boost_new:
+			return True
+		if impf_quote_boost2_old < impf_quote_boost2_new:
 			return True
 		print("Values have not changed: Do not tweet")
 		return False
@@ -107,6 +113,7 @@ def save_state(data):
 	config.set("LAST_TWEET", "impf_quote_erst", data.get(CSV_COLUMN_ERST))
 	config.set("LAST_TWEET", "impf_quote_voll", data.get(CSV_COLUMN_VOLL))
 	config.set("LAST_TWEET", "impf_quote_boost", data.get(CSV_COLUMN_BOOST))
+	config.set("LAST_TWEET", "impf_quote_boost2", data.get(CSV_COLUMN_BOOST2))
 
 	if DRY_RUN:
 		print("")
@@ -126,7 +133,8 @@ def generate_message(data):
 	bar_erst = generate_progressbar(float(data.get(CSV_COLUMN_ERST)))
 	bar_voll = generate_progressbar(float(data.get(CSV_COLUMN_VOLL)))
 	bar_boost = generate_progressbar(float(data.get(CSV_COLUMN_BOOST)))
-	msg = "{} mind. eine Impfdosis\n{} vollständig Geimpfte\n{} Booster Geimpfte".format(bar_erst, bar_voll, bar_boost)
+	bar_boost2 = generate_progressbar(float(data.get(CSV_COLUMN_BOOST2)))
+	msg = "{} mind. eine Impfdosis\n{} grundimmunisiert\n{} erste Auffrischimpfung\n{} zweite Auffrischimpfung".format(bar_erst, bar_voll, bar_boost, bar_boost2)
 	return msg
 
 def run_all():
