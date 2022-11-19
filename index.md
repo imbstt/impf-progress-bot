@@ -81,3 +81,8 @@ Diese Accounts werden von anderen Personen betrieben und sind unabhängig entsta
 ### Vereinigtes Königreich
 
 * Es finden sich einige Accounts über die [Twitter Personensuche zu #ukvaccine](https://twitter.com/hashtag/ukvaccine?src=hashtag_click&f=user)
+
+### Andere Plattformen
+
+* Mastodon: [@impfstatus@botsin.space](https://botsin.space/@impfstatus)
+
