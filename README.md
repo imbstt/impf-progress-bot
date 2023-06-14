@@ -49,7 +49,7 @@ Running a cronjob with virtualenv:
 
 ## Data Source
 
-The script uses data from [Aktuell_Deutschland_Impfquoten_COVID-19.csv](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/blob/master/Aktuell_Deutschland_Impfquoten_COVID-19.csv), provided by the Robert Koch-Institut under [CC-BY 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de).
+The script uses data from [Deutschland_Impfquoten_COVID-19.csv](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/blob/main/Deutschland_Impfquoten_COVID-19.csv), provided by the Robert Koch-Institut under [CC-BY 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de).
 
 ## License
 

@@ -10,15 +10,15 @@ Set up config values and constants
 """
 twitter_config = configparser.ConfigParser()
 twitter_config.read("twitter.cfg")
-DRY_RUN         = twitter_config.getboolean("TWITTER", "DRY_RUN")
-CONSUMER_KEY    = twitter_config.get("TWITTER", "CONSUMER_KEY")
-CONSUMER_SECRET = twitter_config.get("TWITTER", "CONSUMER_SECRET")
-ACCESS_KEY      = twitter_config.get("TWITTER", "ACCESS_KEY")
-ACCESS_SECRET   = twitter_config.get("TWITTER", "ACCESS_SECRET")
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+DRY_RUN = twitter_config.getboolean("TWITTER", "DRY_RUN")
+twclient = tweepy.Client(
+	consumer_key        = twitter_config.get("TWITTER", "CONSUMER_KEY"),
+	consumer_secret     = twitter_config.get("TWITTER", "CONSUMER_SECRET"),
+	access_token        = twitter_config.get("TWITTER", "ACCESS_KEY"),
+	access_token_secret = twitter_config.get("TWITTER", "ACCESS_SECRET")
+)
 
-CSV_URL = "https://raw.githubusercontent.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/master/Aktuell_Deutschland_Impfquoten_COVID-19.csv"
+CSV_URL = "https://raw.githubusercontent.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/main/Deutschland_Impfquoten_COVID-19.csv"
 CSV_COLUMN_ERST = "Impfquote_gesamt_min1"
 CSV_COLUMN_VOLL = "Impfquote_gesamt_gi"
 CSV_COLUMN_BOOST = "Impfquote_gesamt_boost1"
@@ -60,9 +60,9 @@ def send_tweet(the_tweet):
 		print("[DRY RUN] Not actually sending tweet")
 		return
 
-	twitter_API = tweepy.API(auth)
-	print("Tweeting with handle @{}".format(twitter_API.me().screen_name))
-	twitter_API.update_status(the_tweet)
+	me = twclient.get_me()
+	print("Tweeting with handle @{}".format(me.data["username"]))
+	twclient.create_tweet(text=the_tweet)
 
 def check_if_should_tweet(data):
 	"""
