@@ -26,7 +26,6 @@ Die drei dargestellten Impfquoten werden jeweils an der Gesamtbevölkerung Deuts
 - [Impfquotenmonitoring](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring), im Blatt "Erläuterungen"  
   >Die Impfquote "Gesamt" ist der Anteil aller bisher Geimpften in der Gesamtbevölkerung;
 - [COVID-19-Impfungen in Deutschland#COVID-19 Impfquoten](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland#COVID-19-Impfquoten)
-- [Zusammen gegen Corona: Impfquote](https://www.zusammengegencorona.de/impfen/logistik-und-recht/impfquote/)
 
 ## Tweet-Zeitplan
 
@@ -44,45 +43,9 @@ Ich möchte den Bot simpel halten und die Darstellung nicht verändern oder mit 
 
 Zum Thema Herdenimmunität hat das Bundesministerium für Gesundheit auf der Webseite [Gemeinsam gegen Corona](https://www.zusammengegencorona.de/impfen/logistik-und-recht/impfquote/#id-62eceedb-5921-54a8-94dc-c1e162c8ff46) Informationen bereitgestellt.
 
-## Weitere Twitter Bots
-
-Im Folgenden sind einige weitere Bots und Accounts gelistet, die die Impfzahlen ebenfalls bereitstellen, ggf. etwas anders aufbereitet. Einige Accounts versuchen Vorhersagen zu treffen, diese sind meiner Meinung nach mit Vorsicht zu genießen. 
-
-Diese Accounts werden von anderen Personen betrieben und sind unabhängig entstanden.
-
-### Deutschland
-
-* [@CoronaBot_DEU](https://twitter.com/CoronaBot_DEU)
-* [@impfupdate](https://twitter.com/impfupdate) (Englisch)
-* [@ImpfStatusGER](https://twitter.com/ImpfStatusGER) 
-* [@GermanyProgress](https://twitter.com/GermanyProgress)
-* [@impffortschritt](https://twitter.com/impffortschritt)
-
-### Belgien
-
-* [@VacBotBE](https://twitter.com/VacBotBE)
-
-### Italien
-
-* [@BVaccini](https://twitter.com/BVaccini)
-
-### Österreich
-
-* [@jaukerlbot](https://twitter.com/jaukerlbot) 
-
-### Schweiz
-
-* [@ImpfstatusS](https://twitter.com/ImpfstatusS)
-
-### USA
-
-* [@vax_progress](https://twitter.com/vax_progress)
-
-### Vereinigtes Königreich
-
-* Es finden sich einige Accounts über die [Twitter Personensuche zu #ukvaccine](https://twitter.com/hashtag/ukvaccine?src=hashtag_click&f=user)
-
 ### Andere Plattformen
 
-* Mastodon: [@impfstatus@botsin.space](https://botsin.space/@impfstatus)
+*Andere Bots sind unabhängig entstanden und werden nicht von mir betrieben.*
+
+Auf Mastodon: [@impfstatus@botsin.space](https://botsin.space/@impfstatus)
 
