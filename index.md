@@ -37,12 +37,6 @@ Der Bot wird als Hobbyprojekt betrieben von [@imbstt](https://twitter.com/imbstt
 
 Der Code ist Open Source und auf Github einsehbar: [https://github.com/imbstt/impf-progress-bot](https://github.com/imbstt/impf-progress-bot)
 
-## Mehr Details, Prognosen, Herdenimmunität?
-
-Ich möchte den Bot simpel halten und die Darstellung nicht verändern oder mit Prognosen erweitern. 
-
-Zum Thema Herdenimmunität hat das Bundesministerium für Gesundheit auf der Webseite [Gemeinsam gegen Corona](https://www.zusammengegencorona.de/impfen/logistik-und-recht/impfquote/#id-62eceedb-5921-54a8-94dc-c1e162c8ff46) Informationen bereitgestellt.
-
 ## Auf anderen Plattformen
 
 *Andere Bots sind unabhängig entstanden und werden nicht von mir betrieben.*
