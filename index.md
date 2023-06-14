@@ -43,7 +43,7 @@ Ich möchte den Bot simpel halten und die Darstellung nicht verändern oder mit 
 
 Zum Thema Herdenimmunität hat das Bundesministerium für Gesundheit auf der Webseite [Gemeinsam gegen Corona](https://www.zusammengegencorona.de/impfen/logistik-und-recht/impfquote/#id-62eceedb-5921-54a8-94dc-c1e162c8ff46) Informationen bereitgestellt.
 
-### Andere Plattformen
+## Auf anderen Plattformen
 
 *Andere Bots sind unabhängig entstanden und werden nicht von mir betrieben.*
 
