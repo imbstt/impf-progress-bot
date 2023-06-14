@@ -4,7 +4,7 @@ title: Impfstatus Fortschritt Twitter Bot
 ---
 ## Allgemeine Infos
 
-Der Account Impfstatus Fortschritt [@impf_progress](https://twitter.com/impf_progress) tweetet einmal täglich den Anteil der geimpften deutschen Bevölkerung und stellt diesen mit einem Fortschrittsbalken dar. 
+Der Account Impfstatus Fortschritt [@impf_progress](https://twitter.com/impf_progress) tweetet maximal einmal täglich den Anteil der geimpften deutschen Bevölkerung und stellt diesen mit einem Fortschrittsbalken dar. 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/83777889/144042044-b6627a03-f3a5-4bad-9037-5d5f206d30bf.png" alt="Screenshot eines Tweets von impf_progress vom 30. November 2021" />
@@ -14,9 +14,9 @@ Inspiriert ist die Darstellung durch den Twitter Account [@year_progress](https:
 
 ## Datenquelle
 
-Ich nutze als Datenquelle die vom Robert Koch-Institut bereitgestellte Daten, zu finden auf Github im Repository ["COVID-19-Impfungen in Deutschland"](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/blob/master/Aktuell_Deutschland_Impfquoten_COVID-19.csv). Diese Daten werden unter der [CC-BY 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de) Lizenz veröffentlicht.
+Ich nutze als Datenquelle die vom Robert Koch-Institut bereitgestellten Daten, zu finden auf Github im Repository ["COVID-19-Impfungen in Deutschland"](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/). Diese Daten werden unter der [CC-BY 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de) Lizenz veröffentlicht.
 
-Prozentwerte und Zahlen werden außer Sonntags und an Feiertagen täglich aktualisiert und als maschinenlesbare CSV-Tabellen zur Verfügung gestellt. Diese Daten können zum Beispiel auch in Microsoft Excel, LibreOffice Calc oder einem Texteditor geöffnet und eingelesen werden. 
+Prozentwerte werden dort regelmäßig aktualisiert (seit Juni 2023 noch einmal monatlich) und als maschinenlesbare CSV-Tabellen zur Verfügung gestellt. Diese Daten können zum Beispiel auch in Microsoft Excel, LibreOffice Calc oder einem Texteditor geöffnet und eingelesen werden. 
 
 Bis November 2021 wurden Daten von [impfdashboard.de](https://impfdashboard.de/) bezogen, einem Angebot des Bundesministeriums für Gesundheit. Die Datengrundlage ist hierbei ebenfalls das Robert Koch-Institut.
 
