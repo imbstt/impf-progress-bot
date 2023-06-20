@@ -39,7 +39,7 @@ Der Code ist Open Source und auf Github einsehbar: [https://github.com/imbstt/im
 
 ## Auf anderen Plattformen
 
-*Andere Bots sind unabhängig entstanden und werden nicht von mir betrieben.*
+*Die Bots in dieser Auflistung werden nicht von mir betrieben.*
 
-Auf Mastodon: [@impfstatus@botsin.space](https://botsin.space/@impfstatus)
+* Auf Mastodon: [@impfstatus@botsin.space](https://botsin.space/@impfstatus)
 
